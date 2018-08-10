@@ -1,0 +1,36 @@
+.player {
+    padding:30px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 30px;
+}
+.player1 {
+    background-color: aqua;
+
+}
+
+.player2 {
+    background-color: rgb(255, 254, 196);
+}
+
+td {
+
+     text-align: center;
+     font: 40px sans-serif;
+}
+
+ .gridAll {
+    text-align: center;
+    display: flex;
+    justify-content: center; 
+    padding-top: 50px;
+}     
+img {
+    width: 40px;
+    height: 40px;
+}
+.manual {
+    display: flex;
+    justify-content: center;
+}
