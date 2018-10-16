@@ -26,7 +26,7 @@ export class GameGridComponent implements OnInit {
 
     if (isWon) {
       setTimeout(() => alert('!!! YOU ARE WINNER !!!'
-      ), 100);
+      ), 150);
     }
   }
 }

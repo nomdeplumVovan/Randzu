@@ -20,29 +20,29 @@ export class AppComponent {
 
     @Input() size: any;
 
-    gameBtn() {
-        if (isNaN(this.size)) {
-            alert('Введите размер поля.');
-            return;
-        }
+    // gameBtn() {
+    //     if (isNaN(this.size)) {
+    //         alert('Введите размер поля.');
+    //         return;
+    //     }
 
-        const n = parseInt(this.size, 10);
-        this.createField(n, n);
-    }
+    //     const n = parseInt(this.size, 10);
+    //     this.createField(n, n);
+    // }
 
     onChanged(changed: any) {
         changed === true ? this.t = 'X' : this.t = 'O';
     }
 
-    createField(w, h) {
-        this.gameField = new Array(h);
-        for (let i = 0; i < h; i++) {
-            this.gameField[i] = new Array(w);
-            for (let j = 0; j < w; j++) {
-                this.gameField[i][j] = '';
-            }
-        }
-    }
+    // createField(w, h) {
+    //     this.gameField = new Array(h);
+    //     for (let i = 0; i < h; i++) {
+    //         this.gameField[i] = new Array(w);
+    //         for (let j = 0; j < w; j++) {
+    //             this.gameField[i][j] = '';
+    //         }
+    //     }
+    // }
 
     // setCell(x, y) {
     //     this.gameField[x][y] = this.t;

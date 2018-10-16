@@ -60,9 +60,6 @@ export class GameService {
         }
       }
     }
-    // this.winPointsCount
-    // todo: Check if win combination condition
-    // return false;
   }
 
   private checkVerticalCondition(x: number, y: number, symbol: any) {
