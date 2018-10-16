@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class GameGridItemComponent implements OnInit {
   @Input() symbol: string;
-  
+
   constructor() { }
 
   ngOnInit() {

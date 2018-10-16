@@ -1,48 +1,36 @@
-<div class="player">
-<div class="player1">
-<label>Введите имя:</label><br>
-    <input [(ngModel)]="name" placeholder="name"><br><br>
-<label>Введите возраст:</label><br>
-    <input type="number" [(ngModel)]="age" /> 
-<h1>Добро пожаловать {{name}}!</h1>
-<child1-comp [userName]="name" [userAge]="age"></child1-comp>
-</div>                                        
-<div class="player2">
+<!-- <div class="player">
+  <div class="player1">
     <label>Введите имя:</label><br>
-        <input [(ngModel)]="name2" placeholder="name"><br><br>
+    <input [(ngModel)]="name" placeholder="name"><br><br>
     <label>Введите возраст:</label><br>
-        <input type="number" [(ngModel)]="age2" /> 
+    <input type="number" [(ngModel)]="age" />
+    <h1>Добро пожаловать {{name}}!</h1>
+    <child1-comp [userName]="name" [userAge]="age"></child1-comp>
+  </div>
+  <div class="player2">
+    <label>Введите имя:</label><br>
+    <input [(ngModel)]="name2" placeholder="name"><br><br>
+    <label>Введите возраст:</label><br>
+    <input type="number" [(ngModel)]="age2" />
     <h1>Добро пожаловать {{name2}}!</h1>
     <child2-comp [userName2]="name2" [userAge2]="age2"></child2-comp>
-</div> 
-</div> <br>
+  </div>
+</div> <br> -->
 
 <div class="manual">
 
-    
-     
-     <grid-comp (onChanged)="onChanged($event)" ></grid-comp>
-  Размер поля:
-        <input type ="text" [(ngModel)]="size"  value = "" title="Число клеток"  placeholder="Число клеток" /> 
-        <input type ="button" value ="Начать игру" (click) = "gameBtn();" /> 
-    
-     
-</div> 
+РЭНДЗЮ или ПЯТЬ В ЛИНИЮ 
+
+
+   "размер поля: 15 x 15" 
+  <!-- <input type="text" [(ngModel)]="size" value="" title="Число клеток" placeholder="Число клеток" />
+  <input type="button" value="Начать игру" (click)="gameBtn();" /> -->
+
+
+</div>
 
 <div class="allGrid">
-<div class="gridAll" id="game" > 
-    <table cellpadding='0' cellspacing='0' border='1' bordercolor = "green">
-        <tr *ngFor="let column of gameField; let i = index">
-            <td 
-                *ngFor="let value of gameField[i]; let j = index" 
-                width="60" 
-                height="60" 
-                (click)="setCell(i, j)" 
-                
-            >
-                {{ value }}
-            </td>
-        </tr>
-    </table>
-</div>
+  <div class="gridAll" id="game">
+    <app-game-grid></app-game-grid>
+  </div>
 </div>
