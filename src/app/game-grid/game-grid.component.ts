@@ -8,7 +8,7 @@ import { GameService } from '../game.service';
   styleUrls: ['./game-grid.component.css']
 })
 export class GameGridComponent implements OnInit {
-  private gameMatrix: Array<Array<String>> = [];
+  public gameMatrix: Array<Array<String>> = [];
 
   constructor(private gameService: GameService) { }
 

@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "npm run gh-pages",
+    "github-build": "ng build --prod --base-href https://nomdeplumvovan.github.io/Randzu/",
+    "deploy": "npm run github-build && npm run gh-pages",
     "gh-pages": "gh-pages -d dist -b gh-pages"
   },
   "private": true,
