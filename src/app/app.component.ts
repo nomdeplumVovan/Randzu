@@ -30,19 +30,10 @@ export class AppComponent {
     //     this.createField(n, n);
     // }
 
-    onChanged(changed: any) {
-        changed === true ? this.t = 'X' : this.t = 'O';
-    }
-
-    // createField(w, h) {
-    //     this.gameField = new Array(h);
-    //     for (let i = 0; i < h; i++) {
-    //         this.gameField[i] = new Array(w);
-    //         for (let j = 0; j < w; j++) {
-    //             this.gameField[i][j] = '';
-    //         }
-    //     }
+    // onChanged(changed: any) {
+    //     changed === true ? this.t = 'X' : this.t = 'O';
     // }
+
 
     // setCell(x, y) {
     //     this.gameField[x][y] = this.t;

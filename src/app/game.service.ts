@@ -5,13 +5,15 @@ import { range } from 'lodash';
   providedIn: 'root'
 })
 export class GameService {
-   @Input() size: number;
+  @Input() size: number;
   private matrix: Array<Array<String>> = [];
   private winPointsCount: number;
   public players: any = {};
   public currentPlayer: String = 'X';
+  public color: any = '';
+  public bgColor: any = '';
 
-  initialize(playerNames: Array<any>, size: number= 15, winPointsCount: number = 5) {
+  initialize(playerNames: Array<any>, size: number = 15, winPointsCount: number = 5) {
     this.size = size;
     this.winPointsCount = winPointsCount;
     this.matrix = range(size).map(() => range(size).map(() => ''));
@@ -29,16 +31,14 @@ export class GameService {
     if (this.matrix[x][y] !== '') {
       return;
     }
-
     const symbol = this.currentPlayer;
     this.matrix[x][y] = symbol;
+    this.color = (this.color === 'black') ? 'red' : 'black';
     this.currentPlayer = (symbol === 'X') ? 'O' : 'X';
-
     return this.checkWinConditions(x, y, symbol);
   }
 
   checkWinConditions(x: number, y: number, symbol: any) {
-    // todo: Check if win combination condition
     return this.checkHorizontalCondition(x, y, symbol) ||
       this.checkVerticalCondition(x, y, symbol) ||
       this.checkLeftDiagonalCondition(x, y, symbol) ||
@@ -55,7 +55,9 @@ export class GameService {
         const n2 = matrix[i][j + 2];
         const n3 = matrix[i][j + 3];
         const n4 = matrix[i][j + 4];
-        if (c === symbol && n === symbol && n2 === symbol && n3 ===  symbol && n4 ===  symbol) {
+        if (c === symbol && n === symbol && n2 === symbol && n3 === symbol && n4 === symbol) {
+         this.bgColor = 'lightcyan';
+         this.color = 'blue';
           return true;
         }
       }
@@ -71,7 +73,7 @@ export class GameService {
         const n2 = matrix[i + 2][j];
         const n3 = matrix[i + 3][j];
         const n4 = matrix[i + 4][j];
-        if (c === symbol && n === symbol && n2 === symbol && n3 ===  symbol && n4 ===  symbol) {
+        if (c === symbol && n === symbol && n2 === symbol && n3 === symbol && n4 === symbol) {
           return true;
         }
 
@@ -90,7 +92,7 @@ export class GameService {
         const n2 = matrix[i + 2][j + 2];
         const n3 = matrix[i + 3][j + 3];
         const n4 = matrix[i + 4][j + 4];
-        if (c === symbol && n === symbol && n2 === symbol && n3 ===  symbol && n4 ===  symbol) {
+        if (c === symbol && n === symbol && n2 === symbol && n3 === symbol && n4 === symbol) {
           return true;
         }
 
@@ -107,7 +109,7 @@ export class GameService {
         const n2 = matrix[i - 2][j + 2];
         const n3 = matrix[i - 3][j + 3];
         const n4 = matrix[i - 4][j + 4];
-        if (c === symbol && n === symbol && n2 === symbol && n3 ===  symbol && n4 ===  symbol) {
+        if (c === symbol && n === symbol && n2 === symbol && n3 === symbol && n4 === symbol) {
           return true;
         }
 

@@ -1,4 +1,4 @@
-<div class="game-grid">
+<!-- <div class="game-grid">
   <table cellpadding="0" cellspacing="0" border="1" bordercolor="green">
     <tr *ngFor="let column of gameMatrix; let i = index">
       <td *ngFor="let value of gameMatrix[i]; let j = index" width="50" height="50">
@@ -7,4 +7,12 @@
       </td>
     </tr>
   </table>
+</div> -->
+<div class="grid-field">
+  <div class="grid-row" *ngFor="let column of gameMatrix; let i = index">
+    <div class="grid-column" *ngFor="let value of gameMatrix[i]; let j = index">
+      <app-game-grid-item [symbol]="value" (click)="putSymbol(i, j)">
+      </app-game-grid-item>
+    </div>
+  </div>
 </div>
